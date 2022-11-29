@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--=============== FAVICON ===============-->
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Forbidden_Symbol_Transparent.svg/1200px-Forbidden_Symbol_Transparent.svg.png" type="image/x-icon">
+
+  <!--=============== BOXICONS ===============-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+  <!--=============== SWIPER CSS ===============-->
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+  <title>ForbiddenWeb</title>
+</head>
+
+<body>
+  <!--==================== HEADER ====================-->
+  <header  class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">
+        <img src="https://icones.pro/wp-content/uploads/2021/04/icone-telegramme-symbole-logo-violette.png" alt="" class="nav__logo-img">
+        FORBIDDEN
+      </a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#home" class="nav__link active-link">Home</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#trick" class="nav__link">Pricing</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#new" class="nav__link">Other Groups</a>
+          </li>
+
+          <a href="/sign-in-formproject17/dist/index.html" class="button button--ghost">Sign in</a>
+        </ul>
+
+        <div class="nav__close" id="nav-close">
+          <i class='bx bx-x'></i>
+        </div>
+
+        <img src="https://64.media.tumblr.com/a71bc83661d3be8192c7d6cd62e2e966/tumblr_pa2knrX5Zz1xu0hh4o1_500.gif" alt="" class="nav__img">
+      </div>
+
+      <div class="nav__toggle" id="nav-toggle">
+        <i class='bx bx-grid-alt'></i>
+      </div>
+
+    </nav>
+  </header>
+
+  <main class="main">
+    <!--==================== HOME ====================-->
+    <section  class="home container" id="home">
+      <div  class="home">
+        <div class="swiper-wrapper">
+          <!-- HOME SLIDER 1 -->
+          <section class="swiper-slide">
+            <div class="home__content grid">
+              <div class="home__group">
+                <img src="https://i.pinimg.com/originals/5f/93/49/5f934966a1d20bae1909c9ef2278bd4c.gif" alt="" class="home__img">
+                <div class="home__indicator"></div>
+
+                <div class="home__details-img">
+                  <h4 class="home__details-title">@ForbiddenPub</h4>
+                  <span class="home__details-subtitle">@ForbiddenGC</span>
+                </div>
+              </div>
+
+              <div class="home__data">
+                <h3 class="home__subtitle">Public</h3>
+                <h1 class="home__title">FORBIDDEN</h1>
+                <p class="home__description">   Forbidden Group Chat / Channel is a pornographic group chat that contains 18+ models. Child pornography is strictly <b>prohibited</b> on our channel and group chats.
+                </p>
+
+                <div class="home__buttons">
+                  <a href="https://t.me/ForbiddenGC" class="button">Join Us!                   </a>
+                  
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+    </section>
+
+    <!--==================== CATEGORY ====================-->
+    <section  class="section category">
+      <h2 class="section__title">Favorite Category  <i class='bx bx-down-arrow-alt button__icon'></i></h2>
+
+      <div class="category__container container grid">
+        <div class="category__data">
+          <img src="https://cdn-icons-png.flaticon.com/512/199/199086.png" alt="" class="cde category__img">
+          <h3 class="category__title">Forbidden Tracks</h3>
+          <p class="category__description">Target Scammer Info.</p>
+          <br>
+              <a href="https://t.me/+dU9V2jRNbu81MDY1" class="button">Visit</a>
+          
+        </div>
+
+        <div class="category__data">
+          <img src="https://www.pngall.com/wp-content/uploads/2/Share-PNG-Clipart.png" alt="" class="cde category__img">
+          <h3 class="category__title">Share Forbidden</h3>
+          <p class="category__description">join us and form an amazing group</p>
+          <br>
+           <button class="button" onClick='onClickShare()'>Share Us!</button>
+        </div>
+
+        <div class="category__data">
+          <img src="https://cdn-icons-png.flaticon.com/512/37/37631.png?w=360" alt="" class="cde category__img">
+          <style>
+            .cde {
+              -webkit-filter: invert(1);
+              filter: invert(1);
+            }
+          </style>
+          <h3 class="category__title">Forbidden Code</h3>
+          <p class="category__description">Already had a code? Activate your Forbidden Secrets!</p>
+          <br>
+               <a href="#Code" class="button">Click me</a>
+         
+        </div>
+      </div>
+    </section>
+    <script>
+      function onClickShare() {
+        if (navigator.share) {
+          navigator.share({
+              title: 'FORBIDDEN PUBLIC',
+              text: 'FORBIDDEN PUBLIC',
+              url: 'https://Forbidden.netlify.app'
+            })
+            .then(() => console.log('Hacker News Shared! Yay!'))
+            .catch((error) => console.log('Share Error', error));
+        }
+      }
+    </script>
+
+    <!--==================== ABOUT ====================-->
+    <section class="section about" id="about">
+      <div class="about__container container grid">
+        <div class="about__data">
+          <h2 class="section__title about__title">Forbidden Service</h2>
+          <p class="about__description">We definitely does not condone, post or promote any kind of child pornography.<br>
+          If you see someone posting child porn, report immediately to the admins or owner we remove the content and user as soon as possible.
+          </p>
+          <a href="https://t.me/ForbiddenPub" class="button">Know more</a>
+        </div>
+
+        <img src="http://drive.google.com/uc?export=view&id=1SmYV5M0P9KsOMmxAKUz6hd4guyBr2JJ3"
+         alt="" class="about__img">
+      </div>
+    </section>
+
+    <!--==================== TRICK OR TREAT ====================-->
+    <section  class="section trick" id="trick">
+      <h2 class="section__title">PRICING        </h2>
+
+      <div class="trick__container container grid">
+        
+        <div class="trick__content">
+          <h3 class="trick__title">Rare Sets</h3>
+          <span class="trick__subtitle">Premium</span>
+        </div>
+
+        <div class="trick__content">
+          <h3 class="trick__title">Banned Sets</h3>
+          <span class="trick__subtitle">Premium</span>
+        </div>
+
+        <div class="trick__content">
+          <h3 class="trick__title">Leaked Sets</h3>
+          <span class="trick__subtitle">Premium</span>
+        </div>
+
+        <div class="trick__content">
+          <h3 class="trick__title">Hacked Sets</h3>
+          <span class="trick__subtitle">Premium</span>
+        </div>
+
+        <div class="trick__content">
+          <h3 class="trick__title">Life Time Access</h3>
+          <span class="trick__subtitle">Premium</span>
+        </div>
+
+        <div class="trick__content">
+          <h3 class="trick__title">Uncommon Sets</h3>
+          <span class="trick__subtitle">Premium</span>
+        </div>
+      </div>
+    </section>
+
+    <!--==================== DISCOUNT ====================-->
+    <section class="section discount">
+      <div  class="discount__container container grid">
+        
+        <div class="discount__data">
+          <h2 class="discount__title"> Discounted <br><h1>₱488</h1> <br>First 5 to avail. <br> 20 Slots Only.</h2>
+          <a href="https://t.me/FourB1T" class="button">Choose Plan</a>
+        </div>
+
+        <img src="https://i.pinimg.com/originals/f9/42/5e/f9425ec6e73ca64317310db4a3f3e05c.gif" alt="" class="discount__img">
+        
+      </div>
+    </section>
+
+    <!--==================== NEW ARRIVALS ====================-->
+    <section class="section new" id="new">
+      <h2 class="section__title">Other Groups</h2>
+
+      <div class="new__container container">
+        <div class="swiper new-swiper">
+          <div class="swiper-wrapper">
+            <div class="new__content swiper-slide">
+              <img style="border-radius: 50%"  src="http://drive.google.com/uc?export=view&id=1T2KbiwKK_xzj_p6chyJSgv0Wb2oHCAvs" alt="" class="new__img">
+              <h3 class="new__title">Red Light District</h3>
+              <span class="new__subtitle">Group Chat</span>
+
+              <div class="new__prices">
+           <a href="https://t.me/R3dLightDistrict" class="button">Join</a>
+               
+              </div>
+            </div>
+
+            <div class="new__content swiper-slide">
+              <img style="border-radius: 50%"  src="http://drive.google.com/uc?export=view&id=1T2rzevco2Zuifc97t_0se1gLkXQ6Ii6q" alt="" class="new__img">
+              <h3 class="new__title">Olympus</h3>
+              <span class="new__subtitle">Group Chat</span>
+
+              <div class="new__prices">
+              <a href="https://t.me/OfficialOlympus_GC" class="button">Join</a>
+
+              </div>
+
+              <button class="button new__button">
+                <i class='bx bx-cart-alt new__icon'></i>
+              </button>
+            </div>
+            <div class="new__content swiper-slide">
+              <img style="border-radius: 50%"  src="http://drive.google.com/uc?export=view&id=1TAOYj4MCgG5pRW06ts5v4nXWXazMLiZ2" alt="" class="new__img">
+              <h3 class="new__title">PiViVids</h3>
+              <span class="new__subtitle">Group Chat</span>
+
+              <div class="new__prices">
+              <a href="https://t.me/OfficialOlympus_GC" class="button">Join</a>
+              </div>
+
+           </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==================== OUR NEWSLETTER ====================-->
+    <section id="Code" class="section newsletter">
+      <div class="newsletter__container container">
+        <h2 class="section__title">Forbidden Code</h2>
+        <p class="newsletter__description">
+          How to get a code? Avail to<b> Forbidden Secrets</b> and you will be given a code. Type the code below and you will redirect to the Private Channel.
+        </p>
+    <!--==================== WALANG LINK DITO BOBO ====================-->
+        <form action="" class="newsletter__form">
+         <input class="form-control newsletter__input" placeholder="Activation Code" type="text" id="pswd">
+          
+          <input class="button" type="button" value="Redeem" onclick="checkPswd();" />
+        </form>
+      </div>
+    </section>
+    
+  </main>
+  <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="0f744b7e-93b0-460a-ab8c-c6014f167e6f";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    <script language=javascript>
+    document.write(unescape('%3C%73%63%72%69%70%74%20%6C%61%6E%67%75%61%67%65%3D%22%6A%61%76%61%73%63%72%69%70%74%22%3E%66%75%6E%63%74%69%6F%6E%20%64%46%28%73%29%7B%76%61%72%20%73%31%3D%75%6E%65%73%63%61%70%65%28%73%2E%73%75%62%73%74%72%28%30%2C%73%2E%6C%65%6E%67%74%68%2D%31%29%29%3B%20%76%61%72%20%74%3D%27%27%3B%66%6F%72%28%69%3D%30%3B%69%3C%73%31%2E%6C%65%6E%67%74%68%3B%69%2B%2B%29%74%2B%3D%53%74%72%69%6E%67%2E%66%72%6F%6D%43%68%61%72%43%6F%64%65%28%73%31%2E%63%68%61%72%43%6F%64%65%41%74%28%69%29%2D%73%2E%73%75%62%73%74%72%28%73%2E%6C%65%6E%67%74%68%2D%31%2C%31%29%29%3B%64%6F%63%75%6D%65%6E%74%2E%77%72%69%74%65%28%75%6E%65%73%63%61%70%65%28%74%29%29%3B%7D%3C%2F%73%63%72%69%70%74%3E'));
+    dF('%2631%2631%2631%264Dtdsjqu%2631uzqf%264E%2633ufyu0kbwbtdsjqu%2633%264F%261B%2631%2631%2631%2631%2631%2631%2631gvodujpo%2631difdlQtxe%2639%263%3A%2631%268C%261B%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631wbs%2631dpogjsnQbttxpse%2631%264E%2631%2633GpscjeefoQvcABenjo9l%2633%264C%261B%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631wbs%2631qbttxpse%2631%264E%2631epdvnfou/hfuFmfnfouCzJe%2639%2633qtxe%2633%263%3A/wbmvf%264C%261B%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631jg%2631%2639qbttxpse%2631%264E%264E%2631dpogjsnQbttxpse%263%3A%2631%268C%261B%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631bmfsu%2639%2638Dpssfdu%2631Dpef%2632%2638%263%3A%264C%261B%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631xjoepx/mpdbujpo%2631%264E%2631%2633iuuqt%264B00u/nf0%2CkGoHCOil3vRzZkKm%2633%264C%261B%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%268E%261B%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631fmtf%268C%261B%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631bmfsu%2639%2633Xspoh%2631Dpef%2633%263%3A%264C%261B%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%2631%268E%261B%2631%2631%2631%2631%2631%2631%2631%268E%261B%2631%2631%2631%264D0tdsjqu%264F1')
+  </script>
+ 
+
+  <!--==================== FOOTER ====================-->
+  <footer class="footer section">
+    <div class="footer__container container grid">
+      <div class="footer__content">
+        <a href="#" class="footer__logo">
+          <img src="https://64.media.tumblr.com/6c4901a02c1b54a728980d55c3f2e179/tumblr_mghkteR92b1qkhj4eo1_250.gif" alt="" class="footer__logo-img">
+          FORBIDDEN
+        </a>
+
+        <p class="footer__description">We Crave What <br> We Can't Have.</p>
+
+      <div class="footer__content">
+           </div>
+         </div>
+    </div>
+
+    <span class="footer__copy">&#169; ForbiddenX8bit. All rigths reserved</span>
+
+    <img src="https://64.media.tumblr.com/9399e5e1fa6f95c895a501b8226121bd/tumblr_nr4f0wy65q1updbngo1_250.gif" alt="" class="footer__img-one">
+    <img src="https://i.gifer.com/2iFd.gif" alt="" class="footer__img-two">
+  </footer>
+
+
+
+  <!--=============== SCROLL REVEAL ===============-->
+  <script src="assets/js/scrollreveal.min.js"></script>
+
+  <!--=============== SWIPER JS ===============-->
+  <script src="assets/js/swiper-bundle.min.js"></script>
+
+  <!--=============== MAIN JS ===============-->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
